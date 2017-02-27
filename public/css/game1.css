@@ -1,0 +1,12 @@
+body {
+  background-color: #ccf;
+}
+.game_frame {
+  width: 640px;
+  padding 30px;
+}
+.game_option {
+  background-color: #aaf;
+  padding: 2px 5px;
+  border-radius: 5px;
+}

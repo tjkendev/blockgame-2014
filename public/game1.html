@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>繋ぎ消しパズル</title>
+    <script src="./js/blockgame-2014.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./css/game1.css">
+  </head>
+  <body>
+    <center>
+      <div class="game_frame">
+        <canvas id="game_canvas" width="640" height="480"></canvas><br>
+      </div>
+      <h3>繋ぎ消しパズル</h3>
+      <pre>2014年工大祭 ロ技研で展示していたゲーム
+(ソースコード公開用に修正済み)</pre>
+      <h3>ルール説明</h3>
+      <pre>このゲームはブロックを消して点数を取っていくゲームです。
+同じブロックが4つ繋がっている状態で消すことができます。消して落下したブロックで連鎖します。
+n連鎖目の得点 : (n連鎖目に消えるブロック数) × n
+ブロックが上昇していくにつれレベルが上がり、だんだんと難しくなります。
+また、画面がブロックで埋もれると下から水面が迫ってきます。水中に潜ると体力が減っていきます。
+上の刺に刺さったり、体力がなくなったりするとゲームオーバーです。</pre>
+      <h3>ゲーム中の操作説明</h3>
+      <pre><b><u>ASDWキー</u></b> : プレイヤーから指定した方向(<b>A</b>:左, <b>D</b>:右, <b>W</b>:上, <b>S</b>:下)のブロックを消す
+<b><u>Spaceキー</u></b> : ブロックの上昇を加速, <b><u>十字キー</u></b> : プレイヤーの移動
+<b><u>ESCキー</u></b> : ポーズ
+タイトル画面に戻りたくなったら画面更新F5してください。</pre>
+    </center>
+  </body>
+</html>
