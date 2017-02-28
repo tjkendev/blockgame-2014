@@ -34,15 +34,12 @@ module.exports = (function() {
   ];
     var chainChange = 3;
 
-    //var fsize = 20;
-
     // 画像の読み込み
     var gimg = new Image(); gimg.src = "./img/obj.png";
     var bimg = new Image(); bimg.src = "./img/op5.png";
     var stimg = new Image(); stimg.src = "./img/stback.png";
 
     var highscore;
-    var $el;
 
     // ブロック描画関数
     var renderBlock = function(context, p, x, y, bcolor, brate, mrate) {
@@ -57,7 +54,7 @@ module.exports = (function() {
               gobj.renderX + BLOCK_SIZE.x*x, gobj.renderY,
               BLOCK_SIZE.x, BLOCK_SIZE.y*(-rate));
         }
-      }else if(y==0) {
+      }else if(y===0) {
         var rate = brate - mrate;
         context.drawImage(gimg, BLOCK_SIZE.x*bcolor, BLOCK_SIZE.y*(rate >= 0 ? 1 + rate : 1),
             BLOCK_SIZE.x, BLOCK_SIZE.y*(rate >= 0 ? 1-rate : 1),
@@ -76,7 +73,7 @@ module.exports = (function() {
             BLOCK_SIZE.x, BLOCK_SIZE.y);
       }
       context.fill();
-    }
+    };
 
     function SceneGame() {
       this.wh_now = 0;
@@ -191,7 +188,6 @@ module.exports = (function() {
           var rx, ry;
           rx = gobj.renderX + BLOCK_SIZE.x * gobj.gmap.getPlayerPos().x;// + BLOCK_SIZE.x/2;
           ry = gobj.renderY + BLOCK_SIZE.y * (gobj.gmap.getPlayerPos().y - brate);// + BLOCK_SIZE.y/2;
-          //var di = gobj.gmap.moveDir();
           if((gobj.gmap.isMove() || gobj.gmap.isFall()) && di<4) {
             rx += d[di].x * (gobj.gmap.moveRate() * BLOCK_SIZE.x - BLOCK_SIZE.x);
             ry += d[di].y * (gobj.gmap.moveRate() * BLOCK_SIZE.y - BLOCK_SIZE.y);
@@ -200,7 +196,6 @@ module.exports = (function() {
           }
           var pip = 0;
           if(gobj.gmap.isTouch()) {
-            //var di = gobj.gmap.getTouchDir();
             pip = BLOCK_SIZE.x*(gobj.gmap.getTouchDir() + 1);
           }
           if(gobj.gmap.getPlayerPos().y === 0) {
@@ -416,7 +411,7 @@ module.exports = (function() {
           if(fade>=0) {
             context.beginPath();
             context.fillStyle = '#000';
-            if(fade==0) {
+            if(fade===0) {
               context.globalAlpha = (60 - fframe)/60;
             }else {
               context.globalAlpha = fframe/60;
@@ -514,7 +509,7 @@ module.exports = (function() {
             // その他の処理
             break;
         }
-        // ESC Keyでタイトル画面へ
+        // ESC Keyでタイトル画面へ(工大祭用)
         //if(key[27]) {
         //  //console.log("Esc");
         //  this.setScene('title', {});
@@ -536,13 +531,11 @@ module.exports = (function() {
         }
         // その他シーン移動
         if(fade == 1 && fframe == 60) {
-          // ゲームクリア時にしようと思ったけど死んでもスコア反映するか
-          //if(GameObject[0].mode === GAME_MODE.clear) {
+          // ハイスコア時にスコア反映
           if(GameObject[0].gmap.getScore() > highscore) {
             // LocalStorageに保存しよう
             localStorage.setItem("TestGame_HighScore", String(GameObject[0].gmap.getScore()));
           }
-          //}
           this.setScene(next_scene, s_options);
         }
         for(var i=0; i<key.length; ++i) prev_key[i] = key[i];

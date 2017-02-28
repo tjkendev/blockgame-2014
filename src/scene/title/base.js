@@ -14,8 +14,6 @@ module.exports = (function() {
 
   var bimg = new Image();
   bimg.src = "./img/stback.png";
-  var stimg = new Image();
-  stimg.src = "./img/op5.png";
   var gpsimg = new Image();
   gpsimg.src = "./img/gps.png";
 
@@ -45,7 +43,6 @@ module.exports = (function() {
       context.fillRect(0, 0, 640, 480);
       context.drawImage(bimg, 0, 0);
       context.globalAlpha = 0.1;
-      //context.drawImage(stimg, 0, 0);
       context.drawImage(gpsimg, 0, 0, 490, 360, 0, 0, 640, 480);
       context.globalAlpha = 1.0;
 

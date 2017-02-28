@@ -23,10 +23,10 @@ module.exports = (function() {
     return arr;
   }
 
-  // Erase Block Num
+  // # of blocks erased
   var ERASE_BNUM = 4;
 
-  // temporary variable
+  // temporal variable
   var jmap = [];
   function jmapInit(sx, sy) {
     if(Number(sy)) {
@@ -446,13 +446,13 @@ module.exports = (function() {
           var nx = this.x + d[this.direct].x, ny = this.y + d[this.direct].y;
           // 各処理を行う
           switch(this.action) {
-          case ACTION_TYPE.none:
+          case ACTION_TYPE.none: // 何もしていない状態
             // 刺による即死
             if(this.y <= 0) this.action = this.next_action = ACTION_TYPE.dead;
             this.action = this.next_action;
-            // ここで時間初期化しないのは、どの状態も即実行可能にするため
+            // ここで時間を初期化しないのは、どの状態も即実行可能にするため
             break;
-          case ACTION_TYPE.move:
+          case ACTION_TYPE.move: // 移動中の状態
             this.next_action = ACTION_TYPE.none;
             this.setBlock(this.x, this.y, {
                   status_raw: this.getBlock(nx, ny).status,
@@ -477,7 +477,7 @@ module.exports = (function() {
             }
             this.movetime = this.defmtime;
             break;
-          case ACTION_TYPE.fall:
+          case ACTION_TYPE.fall: // 落下中の状態
             var needpfall = this.pfall = this.inPlayer(this.x, this.y+1) && !this.exist(this.x, this.y+1);
             var needbfall = this.bfall = this.fblock.length>0;
             if(needpfall) {
@@ -495,7 +495,7 @@ module.exports = (function() {
             this.direct = DIRECTION.down;
             this.movetime = this.defmtime;
             break;
-          case ACTION_TYPE.touch:
+          case ACTION_TYPE.touch: // 消そうとしている状態
             this.touchDir = this.direct;
             var jx = this.x + d[this.direct].x,
                 jy = this.gmap.length - this.sy + this.y + d[this.direct].y;
@@ -520,7 +520,7 @@ module.exports = (function() {
             this.next_action = ACTION_TYPE.none;
             this.movetime = this.defmtime;
             break;
-          case ACTION_TYPE.dead:
+          case ACTION_TYPE.dead: // 死んだ状態
             this.hp = 0.0;
             break;
           default:
@@ -530,9 +530,6 @@ module.exports = (function() {
       }else {
         // 処理終了まで待機
         if(this.hp > 0.0) --this.movetime;
-        //if(this.movetime <= 0) {
-        //  this.action = this.next_action;
-        //}
       }
 
       // 判定中はステージ状態変更を行わない
