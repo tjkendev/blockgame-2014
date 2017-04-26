@@ -1,6 +1,5 @@
 node_modules/
 *~
-public/js
-public/img
+public/js/blockgame-2014.js
 npm-debug.log
 .DS_store
