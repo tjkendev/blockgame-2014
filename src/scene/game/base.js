@@ -35,9 +35,9 @@ module.exports = (function() {
     var chainChange = 3;
 
     // 画像の読み込み
-    var gimg = new Image(); gimg.src = "./img/obj.png";
-    var bimg = new Image(); bimg.src = "./img/op5.png";
-    var stimg = new Image(); stimg.src = "./img/stback.png";
+    var gimg = new Image(); gimg.src = "./public/img/obj.png";
+    var bimg = new Image(); bimg.src = "./public/img/op5.png";
+    var stimg = new Image(); stimg.src = "./public/img/stback.png";
 
     var highscore;
 

@@ -13,9 +13,9 @@ module.exports = (function() {
   var options = [];
 
   var bimg = new Image();
-  bimg.src = "./img/stback.png";
+  bimg.src = "./public/img/stback.png";
   var gpsimg = new Image();
-  gpsimg.src = "./img/gps.png";
+  gpsimg.src = "./public/img/gps.png";
 
   var highscore;
   var $el;
