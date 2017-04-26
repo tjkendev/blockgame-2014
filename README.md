@@ -3,7 +3,7 @@
 2014年工大祭で展示していたゲーム  
 その中から音楽、効果音を抜いたもの
 
-[ここ](http://smijake3.s602.xrea.com/game/rogy/kodaisai14/)で動いているものが遊べる
+[ここ](http://smijake3.s602.xrea.com/game/rogy/kodaisai14/)で音楽・効果音付きの動いているものが遊べる
 
 ## Requirement
 
