@@ -13,7 +13,7 @@
     "grunt-image": "^4.3.0",
     "grunt-webpack": "^2.0.1",
     "jquery": "^3.4.1",
-    "querystringify": "^2.1.1",
+    "querystringify": ">=2.1.1",
     "underscore": "*",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^3.7.1"
