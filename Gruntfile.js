@@ -14,7 +14,6 @@ module.exports = function(grunt) {
               "NODE_ENV": JSON.stringify("production")
             }
           }),
-          new webpack.optimize.DedupePlugin(),
           new webpack.optimize.UglifyJsPlugin()
         )
       },
