@@ -5,7 +5,7 @@
   "main": "./src/main.js",
   "devDependencies": {
     "braces": "^3.0.2",
-    "grunt": "^1.2.1",
+    "grunt": "^1.3.0",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-qunit": "^3.1.0",
     "grunt-contrib-uglify": "^2.1.0",
@@ -13,10 +13,12 @@
     "grunt-image": "^5.0.2",
     "grunt-webpack": "^2.0.1",
     "jquery": "^3.5.1",
-    "querystringify": ">=2.1.1",
-    "underscore": "^1.10.2",
+    "node-forge": ">=0.10.0",
+    "querystringify": "^2.2.0",
+    "underscore": "^1.11.0",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "yargs-parser": ">=13.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
