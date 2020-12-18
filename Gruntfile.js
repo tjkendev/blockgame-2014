@@ -13,24 +13,9 @@ module.exports = function(grunt) {
             "process.env": {
               "NODE_ENV": JSON.stringify("production")
             }
-          }),
-          new webpack.optimize.UglifyJsPlugin()
+          })
         )
       },
-    },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-        mangle: true,
-        //mangle: false,
-        //beautify: true,
-        compress: true,
-        report: 'gzip',
-      },
-      build: {
-        src: './public/js/<%= pkg.name %>.js',
-        dest: './public/js/<%= pkg.name %>.min.js'
-      }
     },
     image: {
       dynamic :{
@@ -55,12 +40,11 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['webpack', 'uglify'],
+      tasks: ['webpack'],
     },
   });
 
   // grunt contribute
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-image');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -69,5 +53,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-webpack');
 
   // Default tasks
-  grunt.registerTask('default', ['webpack', 'uglify', 'image']);
+  grunt.registerTask('default', ['webpack', 'image']);
 };
