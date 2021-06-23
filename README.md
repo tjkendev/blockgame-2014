@@ -1,14 +1,13 @@
 # 繋ぎ消しパズル
 
-2014年工大祭で展示していたゲーム  
-その中から音楽、効果音を抜いたもの
+2014年工大祭で展示していたゲームで、その中から音楽と効果音を抜いたもの
 
-[ここ](http://smijake3.s602.xrea.com/game/rogy/kodaisai14/)で音楽・効果音付きの動いているものが遊べる
+[ここ](http://smijake3.s602.xrea.com/game/rogy/kodaisai14/) で音楽・効果音付きの動いているものが遊べる
 
 ## Requirement
 
-node v7.5.0  
-npm 4.1.2  
+- node v14.7.0
+- npm 7.6.0
 
 ## Install
 
@@ -24,22 +23,27 @@ $ npm install -g webpack webpack-cli grunt grunt-cli
 
 ## Compile
 
-* ソースコードのコンパイル + 画像の圧縮
+### ソースコードのコンパイル + 画像の圧縮
+
 ```bash
 $ grunt
 ```
 コンパイル、圧縮すると、"public"内に出力される
 
-* jsファイルの監視自動コンパイル
+### jsファイルの監視自動コンパイル
+
 ```bash
 $ webpack --watch
 ```
+
 もしくは
+
 ```bash
 $ grunt watch
 ```
 
-* 画像の圧縮
+### 画像の圧縮
+
 ```bash
 $ grunt image
 ```
