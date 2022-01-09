@@ -9,13 +9,13 @@
     "grunt-contrib-jshint": "^3.1.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-image": "^6.4.0",
-    "grunt-webpack": "^4.0.3",
+    "grunt-webpack": "^5.0.0",
     "jquery": "^3.6.0",
-    "node-forge": ">=0.10.0",
+    "node-forge": ">=1.2.0",
     "querystringify": "^2.2.0",
-    "terser-webpack-plugin": "^5.2.5",
-    "underscore": "^1.13.1",
-    "webpack": "^5.64.3",
+    "terser-webpack-plugin": "^5.3.0",
+    "underscore": "^1.13.2",
+    "webpack": "^5.65.0",
     "yargs-parser": "^21.0.0"
   },
   "scripts": {
