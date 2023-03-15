@@ -15,7 +15,7 @@
     "querystringify": "^2.2.0",
     "terser-webpack-plugin": "^5.3.6",
     "underscore": "^1.13.6",
-    "webpack": "^5.75.0",
+    "webpack": "^5.76.0",
     "yargs-parser": "^21.1.1"
   },
   "scripts": {
